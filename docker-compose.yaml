@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis-shortener
+    ports:
+      - "6379:6379"
+
+  postgres:
+    image: postgres:15
+    container_name: pg-shortener
+    environment:
+      POSTGRES_USER: salah
+      POSTGRES_PASSWORD: serrakh
+      POSTGRES_DB: shortener
+    ports:
+      - "5432:5432"
